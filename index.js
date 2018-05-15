@@ -26,7 +26,12 @@ button.addEventListener('click', function(ev){
       const heading = document.querySelector("#users")
       const user = ev.target.userName
       const age = ev.target.age
-      heading.innerHTML += `<p>${user.value}, ${age.value}</p>`
+
+      const p = document.createElement('p')
+      p.textContent = `${user.value}, ${age.value}`
+      heading.appendChild(p)
+
+      //heading.innerHTML += `<p>${user.value}, ${age.value}</p>`
       form.reset()
       form.userName.focus()
   })
