@@ -24,9 +24,10 @@ button.addEventListener('click', function(ev){
   form.addEventListener("submit", function(ev){
       ev.preventDefault()
       const heading = document.querySelector("#users")
-      const input = ev.target.userName
-      heading.innerHTML += '<p>' + input.value + '</p>'
-      ev.target.userName.value = ''
+      const user = ev.target.userName
+      const age = ev.target.age
+      heading.innerHTML += '<p>' + user.value + ", " + age.value + '</p>'
+      form.reset()
   })
 
 
