@@ -25,8 +25,8 @@ button.addEventListener('click', function(ev){
       ev.preventDefault()
       const heading = document.querySelector("#users")
       const input = ev.target.userName
-      heading.textContent += '  ' + input.value
-      document.myForm.userName.textContent = ""
+      heading.innerHTML += '<p>' + input.value + '</p>'
+      ev.target.userName.value = ''
   })
 
 
