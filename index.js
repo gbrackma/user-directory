@@ -28,6 +28,7 @@ button.addEventListener('click', function(ev){
       const age = ev.target.age
       heading.innerHTML += '<p>' + user.value + ", " + age.value + '</p>'
       form.reset()
+      form.userName.focus()
   })
 
 
