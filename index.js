@@ -26,9 +26,11 @@ button.addEventListener('click', function(ev){
       const heading = document.querySelector("#users")
       const user = ev.target.userName
       const age = ev.target.age
+      const color = ev.target.favColor
 
       const p = document.createElement('p')
-      p.textContent = `${user.value}, ${age.value}`
+      p.textContent = `${user.value}, ${age.value}, ${color.value}`
+      p.style.backgroundColor = color.value
       heading.appendChild(p)
 
       //heading.innerHTML += `<p>${user.value}, ${age.value}</p>`
