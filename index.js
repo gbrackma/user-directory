@@ -33,11 +33,21 @@ button.addEventListener('click', function(ev){
       const nameElement = document.createElement('li')
       nameElement.textContent = `Name: ${user.value}`
       list.appendChild(nameElement)
+
       const ageElement = document.createElement('li')
       ageElement.textContent = `Age: ${age.value}`
       list.appendChild(ageElement)
 
-      list.style.backgroundColor = color.value
+      const colorItem = document.createElement('li')
+      colorItem.textContent = `Favorite Color: `
+      const colorDiv = document.createElement('div')
+      colorDiv.style.backgroundColor = color.value
+      colorDiv.style.width = '3rem'
+      colorDiv.style.height = '3rem'
+      colorItem.appendChild(colorDiv)
+      list.appendChild(colorItem)
+
+      //list.style.backgroundColor = color.value
       heading.appendChild(list)
 
       //heading.innerHTML += `<p>${user.value}, ${age.value}</p>`
