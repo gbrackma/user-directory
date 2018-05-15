@@ -55,8 +55,8 @@
   function rendercolor(newColor){
     const colorDiv = document.createElement('div')
     colorDiv.style.backgroundColor = newColor
-    colorDiv.style.width = '3rem'
-    colorDiv.style.height = '3rem'
+    colorDiv.style.width = '10rem'
+    colorDiv.style.height = '.75rem'
     return colorDiv
   }
 
