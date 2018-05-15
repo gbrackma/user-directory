@@ -28,10 +28,17 @@ button.addEventListener('click', function(ev){
       const age = ev.target.age
       const color = ev.target.favColor
 
-      const p = document.createElement('p')
-      p.textContent = `${user.value}, ${age.value}, ${color.value}`
-      p.style.backgroundColor = color.value
-      heading.appendChild(p)
+      const list = document.createElement('ul')
+
+      const nameElement = document.createElement('li')
+      nameElement.textContent = `Name: ${user.value}`
+      list.appendChild(nameElement)
+      const ageElement = document.createElement('li')
+      ageElement.textContent = `Age: ${age.value}`
+      list.appendChild(ageElement)
+
+      list.style.backgroundColor = color.value
+      heading.appendChild(list)
 
       //heading.innerHTML += `<p>${user.value}, ${age.value}</p>`
       form.reset()
