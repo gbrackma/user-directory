@@ -19,4 +19,14 @@ button.addEventListener('click', function(ev){
     subHeader.textContent = "You have clicked my beautiful button! Thank you!"
   })
 
+  //name code
+  const form = document.querySelector("#userForm");
+  form.addEventListener("submit", function(ev){
+      ev.preventDefault()
+      const heading = document.querySelector("h1.subHeading")
+      const input = document.querySelector('input')
+      heading.textContent = input.value
+  })
+
+
   
