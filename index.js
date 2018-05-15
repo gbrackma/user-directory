@@ -23,8 +23,8 @@ button.addEventListener('click', function(ev){
   const form = document.querySelector("#userForm");
   form.addEventListener("submit", function(ev){
       ev.preventDefault()
-      const heading = document.querySelector("h1.subHeading")
-      const input = document.querySelector('input')
+      const heading = document.querySelector("h1.title")
+      const input = ev.target.userName
       heading.textContent = input.value
   })
 
