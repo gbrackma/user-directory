@@ -2,7 +2,8 @@
 
   // *************** HOMEWORK FOR 5/15 BELOW THIS LINE ***********************
   const form = document.querySelector("#userForm");
-  form.addEventListener("submit", function(ev){
+  //
+  form.addEventListener("submit", (ev) => {
       //called with submit is clicked
 
       //stops auto refresh
@@ -10,7 +11,7 @@
 
       //get the div and form
       const users = document.querySelector("#users")
-      const form = ev.target
+      //const form = ev.target
 
       //creates user object
       const user = {
@@ -21,7 +22,7 @@
 
       //add list to the div
       users.appendChild(renderlist(user))
-      
+
       //reset form
       form.reset()
       form.userName.focus()
@@ -64,6 +65,8 @@
     colorDiv.style.height = '.75rem'
     return colorDiv
   }
+
+
 
 
   
