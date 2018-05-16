@@ -4,66 +4,54 @@
   const form = document.querySelector("#userForm");
   form.addEventListener("submit", function(ev){
       //called with submit is clicked
+
+      //stops auto refresh
       ev.preventDefault()
 
-      //get the variables from the form
+      //get the div and form
       const users = document.querySelector("#users")
       const form = ev.target
 
-      //working with objects
+      //creates user object
       const user = {
           Name: form.userName.value,
           Age: form.age.value,
           'Favorite Color': rendercolor(form.favColor.value),
-
       }
-      //call render list using variables
-      const list = renderlist(user)
 
       //add list to the div
-      users.appendChild(list)
-
+      users.appendChild(renderlist(user))
+      
       //reset form
       form.reset()
       form.userName.focus()
   })
 
   function renderlist(user){
-      //creates a users list item to append to the list of users (users)
-
+    //creates a users list item to append to the list of users (users)
     //create the list
     const list = document.createElement('ul')
-    //call renderListItem for name and age
 
+    //call renderListItem for name and age and color
     Object.keys(user).map(function(label){
         const item = renderListItem(label, user[label])
         list.appendChild(item);
     })
-    //list.appendChild(renderListItem('Name', user.name))
-    //list.appendChild(renderListItem('Age', user.age))
-    //list.appendChild(renderListItem('Favorite Color', user.color))
-
-    //create color Item
-        //const colorItem = renderListItem('Favorite Color','')
-    //add color box to color item
-        //colorItem.appendChild(rendercolor(color))
-    //append color 
-        //list.appendChild(colorItem)
-
     return list
-
-
   }
 
   function renderListItem(label, item){
       //creates a list item and returns it 
     const element = document.createElement('li')
     element.textContent = `${label}: `
+
+    //allows for both div(color) and text(name and age)
     try{  
           element.appendChild(item)
     } catch(e){
         element.textContent += `${item}`
     }
+
     return element
   }
 
