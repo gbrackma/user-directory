@@ -13,10 +13,11 @@
       const users = document.querySelector("#users")
       const user = ev.target.userName.value
       const age = ev.target.age.value
-      const color = ev.target.favColor.value
+      let color = ev.target.favColor.value
+      color = rendercolor(color)
 
       //call render list using variables
-      const list = renderlist(users, user, age, color)
+      const list = renderlist(user, age, color)
 
       //add list to the div
       users.appendChild(list)
@@ -26,7 +27,7 @@
       form.userName.focus()
   })
 
-  function renderlist(users, user, age, color){
+  function renderlist(user, age, color){
       //creates a users list item to append to the list of users (users)
 
     //create the list
@@ -34,14 +35,14 @@
     //call renderListItem for name and age
     list.appendChild(renderListItem('Name', user))
     list.appendChild(renderListItem('Age', age))
+    list.appendChild(renderListItem('Favorite Color', color))
 
     //create color Item
-    const colorItem = renderListItem('Favorite Color','')
+        //const colorItem = renderListItem('Favorite Color','')
     //add color box to color item
-    colorItem.appendChild(rendercolor(color))
+        //colorItem.appendChild(rendercolor(color))
     //append color 
-    list.appendChild(colorItem)
-
+        //list.appendChild(colorItem)
 
     return list
 
@@ -51,7 +52,12 @@
   function renderListItem(label, item){
       //creates a list item and returns it 
     const element = document.createElement('li')
-    element.textContent = `${label}: ${item}`
+    element.textContent = `${label}: `
+    try{  
+          element.appendChild(item)
+    } catch(e){
+        element.textContent += `${item}`
+    }
     return element
   }
 
