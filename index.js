@@ -1,8 +1,5 @@
 //console.log("it works")
 
-
-
-  //name code
   // *************** HOMEWORK FOR 5/15 BELOW THIS LINE ***********************
   const form = document.querySelector("#userForm");
   form.addEventListener("submit", function(ev){
@@ -11,13 +8,17 @@
 
       //get the variables from the form
       const users = document.querySelector("#users")
-      const user = ev.target.userName.value
-      const age = ev.target.age.value
-      let color = ev.target.favColor.value
-      color = rendercolor(color)
+      const form = ev.target
 
+      //working with objects
+      const user = {
+          Name: form.userName.value,
+          Age: form.age.value,
+          'Favorite Color': rendercolor(form.favColor.value),
+
+      }
       //call render list using variables
-      const list = renderlist(user, age, color)
+      const list = renderlist(user)
 
       //add list to the div
       users.appendChild(list)
@@ -27,15 +28,20 @@
       form.userName.focus()
   })
 
-  function renderlist(user, age, color){
+  function renderlist(user){
       //creates a users list item to append to the list of users (users)
 
     //create the list
     const list = document.createElement('ul')
     //call renderListItem for name and age
-    list.appendChild(renderListItem('Name', user))
-    list.appendChild(renderListItem('Age', age))
-    list.appendChild(renderListItem('Favorite Color', color))
+
+    Object.keys(user).map(function(label){
+        const item = renderListItem(label, user[label])
+        list.appendChild(item);
+    })
+    //list.appendChild(renderListItem('Name', user.name))
+    //list.appendChild(renderListItem('Age', user.age))
+    //list.appendChild(renderListItem('Favorite Color', user.color))
 
     //create color Item
         //const colorItem = renderListItem('Favorite Color','')
