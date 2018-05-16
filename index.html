@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
-    <h1 class="title">User Directory</h1>
-    <h1 class="subHeading">Welcome to the User Directory!</h1>
-    <p class="body">In this directory you can add users with there name, age and favorite color.</p>
-
+    <div class="labeling">
+        <h1 class="title">User Directory</h1>
+        <h1 class="subHeading">Welcome to the User Directory!</h1>
+        <p class="body">In this directory you can add users with there name, age and favorite color.</p>
+    </div>
     <!--button>Click Me</button-->
 
     <!--form name="myForm" action="">
@@ -22,29 +22,34 @@
     </form-->
     
 
-    <p>Enter the user information here:</p>
-    <form id="userForm">
-        <p>
-            <label for="userName">Name:</label>
-            <input type="text" placeholder="Enter your name" name="userName" autofocus>
-        </p>
-        <p>
-            <label for="age">Age:</label>
-            <input type="number" placeholder="Enter your age" name="age">
-        </p>
-        <p>
-            <label for="color">Fav Color:</label>
-            <input type="color" name="favColor" value="#ffffff">
-        </p>
-
-        <button type="submit">GO!</button>
-        <button type="reset">Clear please</button>
-    </form>
-
-    <p class="listOfUsers">List of Users: </p>
-    <div class="users" id="users">
+    <main>
         
-    </div>
+        <form id="userForm">
+            <h1>Enter User Information:</h1>
+            <p>
+                <label for="userName">Name:</label>
+                <input type="text" placeholder="Enter your name" name="userName" autofocus>
+            </p>
+            <p>
+                <label for="age">Age:</label>
+                <input type="number" placeholder="Enter your age" name="age">
+            </p>
+            <p>
+                <label for="color">Fav Color:</label>
+                <input type="color" name="favColor" value="#ffffff">
+            </p>
+
+            <button type="submit">GO!</button>
+            <button type="reset">Clear please</button>
+        </form>
+
+        
+        <div class="users" id="users">
+            <h1>List of Users:</h1>
+
+        </div>
+
+    </main>
 
     <script src="index.js"></script>
 </body>

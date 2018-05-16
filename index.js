@@ -52,8 +52,7 @@
 
     const descript = document.createElement('dd')
     //allows for both div(color) and text(name and age)
-    try{  
-        
+    try{   
         descript.appendChild(item)
     } catch(e){
         descript.textContent = item

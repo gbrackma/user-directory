@@ -1,62 +1,58 @@
-head{
-    text-align: center;
+#labeling{
+    display: center;
 }
 body{
     font-family: 'Times New Roman';
-    text-align: center;
     color: #0a0742;
     background-color: #5DBCD2;
-
-
 }
 
 input{
     border: 2px solid white;
     background-color: #0a0742;
     color: white;
-
 }
 
 ::placeholder { 
     color: #5DBCD2;
-    opacity: 1 ; /* Firefox */
-}
-
-.users{
-    text-align: left;
-    font-family: 'Times New Roman', Times, serif;
-    list-style-position: inherit;
-    display: inline;
-}
-
-ul{
-    text-align: left;
-    list-style: inside;
-    list-style-type: square;
+    opacity: 1 ;
 }
 
 button{
     background-color: #0a0742;
 
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
 
     border: 2px solid white;
     color: #5DBCD2;
     padding: 10px 24px;
-    text-align: center;
     text-decoration: #5DBCD2;
     font-size: 16px;
     border-radius: 50%;
 }
 
 button:hover {
-    background-color: white; /* Green */
+    background-color: white;
     color: #5DBCD2;
     border: 2px solid #0a0742;
 }
 
-.listOfUsers{
-    text-align: left;
-    font-size: 24px;
+#userForm{
+    background-color: white;
+    padding: 1rem;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+dl li{
+    list-style: none;
+    margin-top: 2rem;
+}
+
+dl:nth-of-type(even){
+    background-color: white;
 }
